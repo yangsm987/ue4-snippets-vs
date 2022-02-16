@@ -6,12 +6,12 @@
 	},
 	"Write to Log": {
 		"prefix": "ulog",
-		"body": "UE_LOG(LogTemp, ${1|Display,Warning,Error,Fatal|}, TEXT(\"${2:Your message}\"));",
+		"body": "UE_LOG(LogTemp, ${1|Log,Display,Warning,Error,Fatal|}, TEXT(\"${2:Your message}\"));",
 		"description": "Write a message to the log"
 	},
 	"Write to Log (with fn helper)": {
 		"prefix": "ulogfn",
-		"body": "UE_LOG(LogTemp, ${1|Display,Warning,Error,Fatal|}, TEXT(\"$2%s\"), ANSI_TO_TCHAR(__FUNCTION__));",
+		"body": "UE_LOG(LogTemp, ${1|Log,Display,Warning,Error,Fatal|}, TEXT(\"$2%s\"), ANSI_TO_TCHAR(__FUNCTION__));",
 		"description": "Write a message to the log"
 	},
 	"Unreal Enum": {
