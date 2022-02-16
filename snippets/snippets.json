@@ -18,9 +18,9 @@
 		"prefix": "uenum",
 		"body": [
 			"UENUM(BlueprintType)",
-			"enum class ${1:EName} : ${2:uint8}",
+			"enum class ${1:EName} : ${4:uint8}",
 			"{",
-			"\t${3:N_Name1} UMETA(DisplayName=\"${4:DisplayName}\")",
+			"\t${2:N_Name1} UMETA(DisplayName=\"${3:DisplayName}\")",
 			"};"
 		],
 		"description": "Generate an Enum ready for Unreal Engine"
@@ -150,6 +150,37 @@
 			"};"
 		],
 		"description": "Generate an Interface ready for Unreal Engine (include headers details)"
+	},
+	"Unreal Test": {
+		"prefix": "utest",
+		"body": [
+			"IMPLEMENT_SIMPLE_AUTOMATION_TEST(${1:FSomeTest}, TEXT(\"${2:Game.Test.SomeTest}\"), EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter)",
+			"",
+			"bool ${1:FSomeTest}::RunTest(const FString& Parameters)",
+			"{",
+			"\treturn true;",
+			"}"
+		],
+		"description": "Generate an Unit Test ready for Unreal Engine"
+	},
+	"Unreal Test with header": {
+		"prefix": "uhtest",
+		"body": [
+			"#include \"CoreMinimal.h\"",
+			"#include \"Misc/AutomationTest.h\"",
+			"",
+			"#if WITH_DEV_AUTOMATION_TESTS",
+			"",
+			"IMPLEMENT_SIMPLE_AUTOMATION_TEST(${1:FSomeTest}, TEXT(\"${2:Game.Test.SomeTest}\"), EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter)",
+			"",
+			"bool ${1:FSomeTest}::RunTest(const FString& Parameters)",
+			"{",
+			"\treturn true;",
+			"}",
+			"",
+			"#endif // WITH_DEV_AUTOMATION_TESTS"
+		],
+		"description": "Generate an Unit Test ready for Unreal Engine (include headers details)"
 	},
 	"Unreal GetLifeTimeReplicates": {
 		"prefix": ["ugetlifetimereplicatedprops", "usetupreplicatedproperties"],
