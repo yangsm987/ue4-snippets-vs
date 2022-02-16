@@ -45,3 +45,4 @@ All snippets start with the letter _u_, so if you're looking for all the snippet
 | **Get All Actors of Class**                           | ugetallactorsofclass                                                                                                                                        |
 | **Find DataTable Row**                                | utable_findrow                                                                                                                                              |
 | **SaveGame Create/Save/Load**                         | usavegame_create, usavegame_save, usavegame_load                                                                                                            |
+| **Unit Tests**                                        | utest, uhtest                                                                                                                                               |
