@@ -186,11 +186,11 @@
 		"prefix": "uhbdd",
 		"body": [
 			"#include \"CoreMinimal.h\"",
-			"#include \"Misc/AutomationCommon.h\"",
+			"#include \"Tests/AutomationCommon.h\"",
 			"",
 			"#if WITH_DEV_AUTOMATION_TESTS",
 			"",
-			"BEGIN_DEFINE_SPEC(${1:MyCustomSpec}, TEXT(\"${2:Game.BDD.MyCustomSpec}\"), EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter)",
+			"BEGIN_DEFINE_SPEC(${1:MyCustomSpec}, TEXT(\"${2:Game.BDD.MyCustomSpec}\"), EAutomationTestFlags::ProductFilter | EAutomationTestFlags::ApplicationContextMask)",
 			"END_DEFINE_SPEC(${1:MyCustomSpec})",
 			"void ${1:MyCustomSpec}::Define()",
 			"{",
