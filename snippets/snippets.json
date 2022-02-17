@@ -182,6 +182,38 @@
 		],
 		"description": "Generate an Unit Test ready for Unreal Engine (include headers details)"
 	},
+	"Unreal BDD with header": {
+		"prefix": "uhbdd",
+		"body": [
+			"#include \"CoreMinimal.h\"",
+			"#include \"Misc/AutomationCommon.h\"",
+			"",
+			"#if WITH_DEV_AUTOMATION_TESTS",
+			"",
+			"BEGIN_DEFINE_SPEC(${1:MyCustomSpec}, TEXT(\"${2:Game.BDD.MyCustomSpec}\"), EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter)",
+			"END_DEFINE_SPEC(${1:MyCustomSpec})",
+			"void ${1:MyCustomSpec}::Define()",
+			"{",
+			"\tDescribe(\"${3:Execute()}\", [this]() {",
+			"\t\tBeforeEach([this]() {",
+			"\t\t\t// set up some stuff",
+			"\t\t});",
+			"",
+			"\t\tIt(\"should return true when successful\", [this]() {",
+			"\t\t\tTestTrue(\"Execute\", true);",
+			"\t\t\tTestFalse(\"Execute\", false);",
+			"\t\t});",
+			"",
+			"\t\tAfterEach([this]() {",
+			"\t\t\t// tear down some stuff",
+			"\t\t});",
+			"\t});",
+			"}",
+			"",
+			"#endif // WITH_DEV_AUTOMATION_TESTS"
+		],
+		"description": "Generate an Unit BDD ready for Unreal Engine (include headers details)"
+	},
 	"Unreal GetLifeTimeReplicates": {
 		"prefix": ["ugetlifetimereplicatedprops", "usetupreplicatedproperties"],
 		"body": [
